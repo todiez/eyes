@@ -1,0 +1,42 @@
+<html>
+  <head> </head>
+  <link rel="stylesheet" href="./eyes.css" />
+  <body>
+    <div class="eyes">
+      <div class="eye" id="eye1">
+        <div class="ball"></div>
+      </div>
+      <div class="eye" id="eye2">
+        <div class="ball"></div>
+      </div>
+    </div>
+    <button onclick="makeEyesRed()">Red Eyes</button>  
+    <button onclick="makeEyesNormal()">Normal Eyes</button>  
+  </body>
+
+  <script>
+    var balls = document.getElementsByClassName("ball");
+    document.onmousemove = () => {
+      var x = (event.clientX * 100) / window.innerWidth + "%";
+      var y = (event.clientY * 100) / window.innerHeight + "%";
+
+      for (let i = 0; i < 2; i++) {
+        balls[i].style.left = x;
+        balls[i].style.top = y;
+        balls[i].transfoorm = "translate(-" + x + ",-" + y + ")";
+      }
+    };
+
+    function makeEyesRed() {
+      document.getElementById("eye1").className = "eye-red";
+      document.getElementById("eye2").className = "eye-red";           
+    }
+
+    function makeEyesNormal() {
+      document.getElementById("eye1").className = "eye";
+      document.getElementById("eye2").className = "eye";           
+    }
+
+
+  </script>
+</html>

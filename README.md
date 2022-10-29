@@ -12,4 +12,5 @@ This is finished, no further development is planned.
 
 
 
-<img src= "todiez.github.io/pic/redeyes.png" width='300'/>
+
+<img src="eyes.png"/>
